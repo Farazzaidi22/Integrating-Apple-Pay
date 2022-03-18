@@ -35,10 +35,15 @@ app.get('/', (req, res) => {
   res.sendFile(path);
 });
 
-app.get('/config', (req, res) => {
-  res.send({
-    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-  });
+// app.get('/config', (req, res) => {
+//   res.send({
+//     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+//   });
+// });
+
+app.get('/config', function(req, res){
+  data = {publishableKey: process.env.STRIPE_PUBLISHABLE_KEY}
+  res.json(data);
 });
 
 app.post('/create-payment-intent', async (req, res) => {
