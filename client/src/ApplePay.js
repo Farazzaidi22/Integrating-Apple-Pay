@@ -75,11 +75,12 @@ const ApplePay = () => {
     });
   }, [stripe, elements, addMessage]);
 
+  console.log("paymentRequest", paymentRequest)
   return (
     <>
       <h1>Apple Pay</h1>
 
-      <p>
+      {/* <p>
         Before you start, you need to:
         <ul>
           <li><a href="https://stripe.com/docs/stripe-js/elements/payment-request-button#html-js-testing" target="_blank">Add a payment method to your browser.</a> For example, add a card to your Wallet for Safari.</li>
@@ -88,13 +89,13 @@ const ApplePay = () => {
         </ul>
       </p>
 
-      <a href="https://stripe.com/docs/stripe-js/elements/payment-request-button" target="_blank">Stripe Documentation</a>
-
+      <a href="https://stripe.com/docs/stripe-js/elements/payment-request-button" target="_blank">Stripe Documentation</a> */}
+      <div>faraz</div>
       {paymentRequest && <PaymentRequestButtonElement options={{paymentRequest}} />}
 
       <StatusMessages messages={messages} />
 
-      <p> <a href="https://youtu.be/bMCsJfJyQKA" target="_blank">Watch a demo walkthrough</a> </p>
+      {/* <p> <a href="https://youtu.be/bMCsJfJyQKA" target="_blank">Watch a demo walkthrough</a> </p> */}
     </>
   );
 };
